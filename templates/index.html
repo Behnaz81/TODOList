@@ -53,7 +53,9 @@
                 <td>{{ item.priority }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <form action="/delete/{{ item.id }}">
                         <input type="submit" class="btn btn-danger" value="حذف">
+                        </form>
                         <input type="submit" class="btn btn-primary" value="ویرایش">
                     </div>
                 </td>
