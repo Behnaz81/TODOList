@@ -3,7 +3,34 @@
 {% block title %}صفحه اصلی{% endblock %}
 
 {% block content %}
-    {% for item in tasks %}
-        {{ item.title }}
-    {% endfor %}
+
+    <table class="table table-striped table-light my-3 text-center">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">عنوان</th>
+            <th scope="col">توضیحات</th>
+            <th scope="col">اولویت</th>
+            <th scope="col">عملیات</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in tasks %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{ item.title }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.priority }}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn btn-danger">حذف</button>
+                        <button type="button" class="btn btn-primary">ویرایش</button>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
 {% endblock %}
