@@ -41,7 +41,9 @@
         </tr>
         {% for item in tasks_completed %}
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">
+                    <input class="form-check-input p-2 border border-secondary" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
+                </th>
                 <td class="text-decoration-line-through">{{ item.title }}</td>
                 <td>{{ item.description }}</td>
                 <td>{{ item.priority }}</td>
