@@ -19,3 +19,8 @@ def Done(request, id):
     task.is_done = True
     task.save()
     return redirect(Index)
+
+def Delete(request, id):
+    task = Task.objects.get(id=id)
+    task.delete()
+    return redirect(Index)
