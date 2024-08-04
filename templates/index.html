@@ -3,7 +3,11 @@
 {% block title %}صفحه اصلی{% endblock %}
 
 {% block content %}
-
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
     <table class="table table-striped table-light my-3 text-center">
         <thead>
         <tr>
