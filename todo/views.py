@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Task
+from .forms import TaskForm
 from django.http import HttpResponse
 
 
@@ -10,6 +11,7 @@ def Index(request):
     context = {
         'tasks_notcompleted': tasks_notcompleted,
         'tasks_completed': tasks_completed,
+        'form': TaskForm,
     }
     return render(request, 'index.html', context)
 
