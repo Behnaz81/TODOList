@@ -28,8 +28,10 @@
                 <td>{{ item.priority }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" class="btn btn-danger">حذف</button>
-                        <button type="button" class="btn btn-primary">ویرایش</button>
+                        <form action="/delete/{{ item.id }}">
+                        <input type="submit" class="btn btn-danger" value="حذف">
+                        </form>
+                        <input type="submit" class="btn btn-primary" value="ویرایش">
                     </div>
                 </td>
             </tr>
