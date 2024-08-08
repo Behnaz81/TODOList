@@ -3,10 +3,25 @@
 {% block title %}صفحه اصلی{% endblock %}
 
 {% block content %}
-<form action="{% url 'index' %}" method="POST" class="bg-light m-2 mt-3">
+<form action="{% url 'index' %}" method="POST" class="bg-light mt-3 container-fluid">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
+    <div class="row p-3">
+    <div class="col-6">
+        {{ form.title.label_tag }}
+        {{ form.title }}
+    </div>
+    <div class="col-6">
+        {{ form.priority.label_tag }}
+        {{ form.priority }}
+    </div>
+    </div>
+    <div class="row p-3">
+        {{ form.description.label_tag }}
+        {{ form.description }}
+    </div>
+    <div class="w-100 py-3">
+    <input type="submit" value="اضافه کردن" class="btn btn-primary text-center w-50 mx-auto d-block">
+    </div>
 </form>
     <table class="table table-striped table-light my-3 text-center">
         <thead>
