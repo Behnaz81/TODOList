@@ -5,7 +5,7 @@ from .views import Delete
 
 
 urlpatterns = [
-    path('', Index),
+    path('', Index, name='index'),
     path('done/<int:id>/', Done, name='done'),
     path('delete/<int:id>/', Delete, name='delete')
 ]
