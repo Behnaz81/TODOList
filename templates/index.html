@@ -3,7 +3,7 @@
 {% block title %}صفحه اصلی{% endblock %}
 
 {% block content %}
-<form action="" method="post">
+<form action="{% url 'index' %}" method="POST">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">
