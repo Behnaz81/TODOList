@@ -1,0 +1,60 @@
+<table class="table table-striped table-light my-3 text-center">
+        <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">عنوان</th>
+            <th scope="col">توضیحات</th>
+            <th scope="col">اولویت</th>
+            <th scope="col">عملیات</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in tasks_notcompleted %}
+            <tr>
+                <th scope="row">
+                    <form action="/done/{{ item.id }}/">
+                    <input class="form-check-input p-2 border border-secondary" type="submit">
+                    </form>
+                </th>
+                <td>
+                    {{ item.title }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.priority }}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <form action="/delete/{{ item.id }}">
+                        <input type="submit" class="btn btn-danger" value="حذف">
+                        </form>
+                        <input type="submit" class="btn btn-primary" value="ویرایش">
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <th></th>
+            <th>انجام شده</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for item in tasks_completed %}
+            <tr>
+                <th scope="row">
+                    <input class="form-check-input p-2 border border-secondary" type="checkbox" checked disabled>
+                </th>
+                <td class="text-decoration-line-through">{{ item.title }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.priority }}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <form action="/delete/{{ item.id }}">
+                        <input type="submit" class="btn btn-danger" value="حذف">
+                        </form>
+                        <input type="submit" class="btn btn-primary" value="ویرایش">
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
