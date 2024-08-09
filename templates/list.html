@@ -12,7 +12,8 @@
         {% for item in tasks_notcompleted %}
             <tr>
                 <th scope="row">
-                    <form action="/done/{{ item.id }}/">
+                    <form action="{% url 'done' item.id %}" method="post">
+                        {% csrf_token %}
                     <input class="form-check-input p-2 border border-secondary" type="submit">
                     </form>
                 </th>
@@ -22,10 +23,13 @@
                 <td>{{ item.priority }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <form action="/delete/{{ item.id }}">
+                        <form action="{% url 'delete' item.id %}" method="post">
+                            {% csrf_token %}
                         <input type="submit" class="btn btn-danger" value="حذف">
                         </form>
+                        <form action="{% url 'edit' item.id %}">
                         <input type="submit" class="btn btn-primary" value="ویرایش">
+                        </form>
                     </div>
                 </td>
             </tr>
@@ -47,10 +51,13 @@
                 <td>{{ item.priority }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <form action="/delete/{{ item.id }}">
+                        <form action="{% url 'delete' item.id %}" method="post">
+                            {% csrf_token %}
                         <input type="submit" class="btn btn-danger" value="حذف">
                         </form>
+                        <form action="{% url 'edit' item.id %}">
                         <input type="submit" class="btn btn-primary" value="ویرایش">
+                        </form>
                     </div>
                 </td>
             </tr>
