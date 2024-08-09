@@ -19,7 +19,13 @@
                 </th>
                 <td>
                     {{ item.title }}</td>
-                <td>{{ item.description }}</td>
+                <td>
+                    {% if item.description != None %}
+                        {{ item.description }}
+                    {% else %}
+                        ----
+                    {% endif %}
+                </td>
                 <td>{{ item.priority }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
@@ -47,7 +53,13 @@
                     <input class="form-check-input p-2 border border-secondary" type="checkbox" checked disabled>
                 </th>
                 <td class="text-decoration-line-through">{{ item.title }}</td>
-                <td>{{ item.description }}</td>
+                <td>
+                    {% if item.description != None %}
+                        {{ item.description }}
+                    {% else %}
+                        ----
+                    {% endif %}
+                </td>
                 <td>{{ item.priority }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
