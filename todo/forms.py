@@ -13,7 +13,7 @@ class TaskForm(ModelForm):
             'priority': 'اولویت'
         }
         widgets = {
-            'description': Textarea(attrs={ 'rows': 5}),
+            'description': Textarea(attrs={'rows': 5}),
         }
 
     def __init__(self, *args, **kwargs):
