@@ -9,12 +9,20 @@ This project is a todo app using Django to review and improve my skills as a new
 - Set tasks as done
 - Update tasks
 
-## Technologies Used
+## Technical Details
 
-- Django
-- HTML
-- CSS
-- Bootstrap
+- **Technologies Used:** Django, Python, HTML, CSS, Bootstrap
+- **Database:** MySQL
+
+## Installation and Setup
+
+- **Requirements:** Ensure you have Python and Django installed. MySQL should also be configured.
+- **Installation Steps:**
+  1. Clone the repository.
+  2. Install dependencies using `pip install -r requirements.txt`.
+  3. Configure the MySQL database in `settings.py`.
+  4. Run database migrations using `python manage.py migrate`.
+  5. Start the development server with `python manage.py runserver`.
 
 ## Future Improvements
 
